@@ -7,12 +7,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl ='https://smartcampus.uniajc.edu.co:8444/rsu_login_client-0.0.1-SNAPSHOT/login/api/authentication'; // Apunta al backend intermedio
+  private apiUrl = `${environment.baseUrl}/auth/login`; // Nuevo endpoint de login
 
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      // Authorization: environment.tokenService // opcional, si lo usas
+      'Content-Type': 'application/json'
     })
   };
 
