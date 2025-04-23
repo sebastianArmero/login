@@ -1,0 +1,14 @@
+<div>
+    <h2>Días Inhábiles</h2>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <ul>
+      <li *ngFor="let dia of diasInhabiles">
+        <strong>ID:</strong> {{ dia.diinId }} <br>
+        <strong>Fecha:</strong> {{ dia.diinFecha | date:'short' }} <br>
+        <strong>Estado:</strong> {{ dia.diinEstado ? 'Activo' : 'Inactivo' }} <br>
+        <button (click)="cambiarEstado(dia)">Cambiar Estado</button>
+        <hr>
+      </li>
+    </ul>
+  </div>
+  
